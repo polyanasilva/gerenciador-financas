@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 from components.auth import check_user, create_user, hash_password
 import os
+from glob import glob
+import plotly.express as px 
 from datetime import date, datetime
 from components.registro import (
     registrar_recebimento, registrar_gasto,
@@ -75,7 +77,9 @@ else:
     with aba[1]:
         st.subheader("📋 Registros do mês atual")
         hoje = date.today()
-        nome_arquivo = f"dados/{hoje.year}-{str(hoje.month).zfill(2)}.csv"
+        #nome_arquivo = f"dados/{hoje.year}-{str(hoje.month).zfill(2)}.csv"
+        nome_arquivo = f"dados/{hoje.year}-06.csv"
+
 
         if os.path.exists(nome_arquivo) and os.path.getsize(nome_arquivo) > 0:
             df = pd.read_csv(nome_arquivo)
