@@ -71,7 +71,7 @@ else:
 
 
 
-    # ======= ABA DE VISUALIZAÇÃO =======
+    # ======= ABA DE VISUALIZAÇÃO ========
     with aba[1]:
         st.subheader("📋 Registros do mês atual")
         hoje = date.today()
